@@ -22,4 +22,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #incluir los url's de las aplicaciones
     path('', include('applications.actividad.urls')),
-] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+] 
