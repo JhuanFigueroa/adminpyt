@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Lista de actividades
+{% endblock title %}
+    
+
+{% block content %}
+    {% include 'header.html' %}
+    <main class="main contenedor">
+        <h2>Actividades</h2>
+      <section class="actividades contenedor">
+        <a href="{% url 'actividades_app:generate-pdf' %}" target="_blank" class="btn-eliminar">PDF</a>
+        {% for actividad in actividades  %}
+        <div class="actividad">
+            <img src="{% static 'img/beneficios.png' %}" class="img-actividad" />
+            <div class="info-actividad">
+              <h3 class="nombre-actividad"> <a href="{% url 'actividades_app:activity-detail' actividad.id %}">{{actividad.nombre}}</a> </h3>
+              <p class="objetivo-actividad">
+                {{actividad.objetivo}}
+              </p>
+              <div class="detalle-actividad">
+                <span>{{actividad.categoria}}</span>
+                <span>{{actividad.fecha}}</span>
+              </div>
+            </div>
+            <div class="botones-actividad">
+               <a class="btn-editar" href="{% url 'actividades_app:update-activity' actividad.id %}">Editar</a>
+              <button class="btn-eliminar">Eliminar</button>
+            </div>
+          </div>
+        {% endfor %}
+            
+        <!---->
+        
+          
+      </section>
+    </main>
+    {% include 'footer.html' %}
+{% endblock content %}

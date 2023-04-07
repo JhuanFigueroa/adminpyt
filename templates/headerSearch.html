@@ -1,0 +1,37 @@
+<header class="hero">
+    <div class="logo">
+      <a href="{% url 'actividades_app:inicio' %}">
+        <h1>ADMINPYT</h1>
+      </a>
+    </div>
+  </header>
+  <nav class="menu contenedor">
+    <ul>
+      <li>
+        <a href="{% url 'actividades_app:add-actividad' %}">Insertar</a>
+      </li>
+      <li>
+        <a href="{% url 'actividades_app:all-activities' %}">Ver</a>
+      </li>
+      <li>
+        <a href="#">Categorias</a>
+        <ul>
+          
+          {% for categoria in categorias %}
+          <li><a href="{% url 'actividades_app:actividades-categoria' categoria.descripcion%}">{{categoria.descripcion  | capfirst}}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
+      <li>
+        <a href=" {% url 'actividades_app:logout' %}">Cerrar Sesion</a>
+      </li>
+    </ul>
+    <section class="buscador">
+      <form class="buscador-actividades"  method="get">
+        {% csrf_token %}
+        <input type="text" placeholder="Buscar actividad" id="kword" name="kword" />
+        <input type="submit" value="Buscar">
+       </form>
+  
+    </section>
+  </nav>
