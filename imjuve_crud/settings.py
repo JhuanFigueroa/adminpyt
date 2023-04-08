@@ -71,7 +71,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'imjuve_crud.wsgi.application'
-
+CSRF_TRUSTED_ORIGINS = ['hhttps://adminpyt-production.up.railway.app']
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
