@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+    
+   
+
+
+{% if user.email %}
+{% include 'header.html' %}
+<main class="main contenedor">
+  <section class="img-principal contenedor">
+    <img src="{% static 'img/beneficios.png' %}" alt="imagen" />
+  </section>
+
+  <article class="article contenedor">
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
+      distinctio a quaerat similique at sapiente saepe quam suscipit fuga,
+      reiciendis maxime sit molestiae, ipsam quisquam aliquam libero ex
+      officia fugiat! Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Fugit assumenda incidunt libero, expedita necessitatibus atque
+      tempora nemo eaque unde cumque cum reprehenderit! Aut numquam ducimus
+      omnis, voluptatibus eveniet velit natus. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Molestiae ea ad atque! Provident,
+      necessitatibus. Unde sint deserunt, molestiae fuga provident quis. Eum
+      porro optio, ipsam ex labore assumenda provident possimus!
+    </p>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias,
+      reiciendis natus aliquam tempore eum corrupti sit architecto eius
+      nulla incidunt fuga, reprehenderit illum doloribus odit, iusto neque?
+      Perspiciatis, id nisi?
+    </p>
+  </article>
+</main>
+{% else %}
+<header class="hero">
+  <div class="logo">
+    <a href="{% url 'actividades_app:inicio' %}">
+      <h1>ADMINPYT</h1>
+    </a>
+  </div>
+</header>
+  <main class="main contenedor">
+
+    <h2>Idetificate </h2>
+
+    <section class="img-principal contenedor">
+      <img src="{% static 'img/beneficios.png' %}" alt="imagen" />
+    </section>
+  
+    <section class="botones">
+      <a href=" {% url 'actividades_app:login' %}" class="btn-guardar btn-inicar-sesion">Iniciar Sesion</a>
+    </section>
+
+  </main>
+
+{% endif %}
+
+  
+    
+    {% include 'footer.html' %}
+{% endblock content %}
+    

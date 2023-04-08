@@ -1,0 +1,46 @@
+{% extends 'base.html' %} 
+{% block title %} Registrar actividad {% endblock title %}
+{% block content %}
+{% load static %}
+{% include 'header.html' %}
+<main class="main contenedor">
+    <section class="header-detail-activity">
+      <h2 style="text-transform:uppercase ;">{{actividad.nombre}}</h2>
+      <a href="{% url 'actividades_app:generate-pdf' %}" target="_blank" class="btn-eliminar">PDF</a>
+    </section>
+    <section class="data-detail-activty">
+      <span>Participantes: {{actividad.participantes}} </span>
+      <span>Fecha:{{actividad.fecha}} </span>
+    </section>
+    <section class="objetivo-detail-activity">
+      <h3>Objetivo:</h3>
+      <p>
+       {{actividad.objetivo}}
+      </p>
+    </section>
+    <br>
+    <section class="descrpcion-detail-activity">
+        <h3>Descripcion:</h3>
+      <p>
+        {{actividad.descripcion}}
+      </p>
+    </section>
+
+    <section class="evidencias-detail-activity">
+      <section class="imagenes-evidencias">
+
+                
+           
+           {% if actividad.imagen %}
+           <img src="{{actividad.imagen.url }}" class="img-detail-activity" />
+           {% else %}
+           <img src="{% static 'img/beneficios.png' %}" class="img-detail-activity" />
+           {% endif %}
+
+      </section>
+    </section>
+  </main>
+
+{% include 'footer.html' %}
+
+{% endblock content %}

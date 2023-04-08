@@ -15,7 +15,7 @@
        {% if object_list %}
        {% for actividad in object_list  %}
        <div class="actividad">
-           <img src="{% static 'img/beneficios.png' %}" class="img-actividad" />
+           <img src="{{actividad.imagen.url}}" class="img-actividad" />
            <div class="info-actividad">
              <h3 class="nombre-actividad"> <a href="{% url 'actividades_app:activity-detail' actividad.id %}">{{actividad.nombre}}</a> </h3>
              <p class="objetivo-actividad">

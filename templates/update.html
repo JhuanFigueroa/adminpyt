@@ -1,0 +1,42 @@
+{% extends 'base.html' %} 
+{% block title %} Registrar actividad {% endblock title %}
+{% block content %}
+
+{% include 'header.html' %}
+<main class="main contenedor">
+    <h2>Editar Actividad</h2>
+
+    <div id="error" class="errorDiv"></div>
+   <section class="contenedor-formulario">
+    <form class="formulario contenedor" method="post" enctype="multipart/form-data">{% csrf_token %}
+       <label for="nombre">Nombre:</label>
+        {{form.nombre}}
+
+        <label for="fecha">Fecha:</label>
+        {{form.fecha}}
+
+        <label for="participantes">Participantes:</label>
+        {{form.participantes}}
+
+        <label for="objetivo">Objetivo:</label>
+        {{form.objetivo}}
+
+        <label for="categoria">Categoria:</label>
+        {{form.categoria}} 
+
+        <label for="imagen">Imagen:</label>
+        {{form.imagen}} 
+
+        <label for="descripcion">Descripcion:</label>
+        {{form.descripcion}}
+
+       
+        <input type="submit" id="btn-guardar-actividad" class="btn-guardar" value="Actualizar">
+    </form>
+   </section>
+
+</main>
+
+{% include 'footer.html' %}
+
+{% endblock content %}
