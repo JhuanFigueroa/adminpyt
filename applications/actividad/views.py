@@ -8,6 +8,7 @@ from .forms import ActividadForm
 
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
+from django.views.decorators.csrf import csrf_protect
 # Create your views here.
 
 
@@ -102,7 +103,7 @@ def eliminar_actividad(self, id_actividad):
 
 
 #Inicios de sesion
-
+@csrf_protect()
 def login_page(request):
 
     if request.method=='POST': #Nos llega informacion del formulario
