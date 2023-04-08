@@ -1,0 +1,386 @@
+/*Generales*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+.hero{
+    margin-top: 20px;
+}
+
+.contenedor{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.logo a{
+    color: red;
+}
+.logo{
+    margin-top: 20px;
+    margin: 0 auto;
+    text-align: center;
+    
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: 1px solid black;
+    width: 60%;
+}
+
+/*Menu*/
+a{
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    
+}
+
+.menu{
+    margin-top: 30px;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+.menu ul{
+    display: flex;
+    flex-direction: row;
+}
+.menu ul li{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.7rem;
+    flex: 1 1 100%;
+}
+.menu ul li:hover a{
+    background-color: white;
+    color: red;
+}
+
+.menu ul li ul{
+    text-align: center;
+    background-color: black;
+    display: none;
+    position: absolute;
+    top: 100%;
+    padding-left: 0;
+
+}
+.menu ul li:hover ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.menu ul li ul li:hover a{
+    background-color: red;
+    color: white;
+}
+
+.buscador{
+    display: flex;
+    justify-content: center;
+}
+
+/*Contenido principal*/
+.main{
+    margin-top: 30px;
+    height: auto;
+}
+
+.img-principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 250px;
+}
+
+.img-principal img{
+    width: 100%;
+    height: 100%;
+}
+
+.article{
+    width: 80%;
+    margin-top: 30px;
+}
+
+.article p{
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+/*Footer*/
+.footer{
+    margin-top: 200px;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    display: grid;
+    padding: 20px 25px ;
+    grid-template-columns: 70% 20%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.logo-footer{
+    color: red;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/*Formulario*/
+
+h2{
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.errorDiv{
+    margin: 0  auto;
+    padding: 1rem;
+    width: 370px;
+    display: none;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+
+.contenedor-formulario{
+    display: grid;
+    grid-template-columns: 30% 50% 20%;
+}
+.formulario{
+    width: 100%;
+    grid-column: 2;
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario label{
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.formulario input, 
+.formulario textarea, 
+.formulario select,
+.formulario button{
+    margin-bottom: 20px;
+    width: 400px;
+    padding: 8px 3px;
+    text-align: center
+}
+
+/*botones*/
+.btn-guardar {
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px 5px;
+    font-weight: bold;
+}
+.btn-guardar:hover{
+    cursor: pointer;
+}
+.btn-editar {
+    width: 100px;
+    background-color: yellow;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px 5px;
+    font-weight: bold;
+    
+}
+
+.btn-eliminar {
+    width: 100px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px 12px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.btn-editar a,
+.btn-eliminar a {
+    font-size: 1rem !important;
+}
+
+/*Lista de actividades*/
+
+.actividades{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.actividad{
+    width: 100%;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    column-gap: 10px;
+    padding: 10px 8px;
+}
+.img-actividad{
+    width: 100%;
+}
+.info-actividad{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.nombre-actividad a{
+    color: black !important;
+}
+
+.detalle-actividad{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 50px;
+}
+
+.botones-actividad{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.botones{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem;
+}
+
+.btn-inicar-sesion{
+    width: 30%;
+}
+/*Detail actividad*/
+
+.header-detail-activity{
+    display: flex;
+   justify-content: space-evenly;
+   margin-bottom: 20px;
+}
+.data-detail-activty{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.descrpcion-detail-activity,
+.objetivo-detail-activity{
+    margin: 0 auto;
+    width: 80%;
+    letter-spacing: 2px;
+    text-align: justify;
+}
+
+
+.evidencias-detail-activity{
+ display: flex;
+ justify-content: center;
+}
+
+.img-detail-activity{
+    width: 250px;
+    height: 200px;
+    margin: 5px 10px;
+}
+
+.imagenes-evidencias{
+    margin: 20px 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+}
+
+.disabled{
+    opacity: 0.5;
+}
+.disabled:hover{
+    cursor: not-allowed;
+}
+
+form{
+    background-color: whitesmoke;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 0.7rem;
+    border: 1px solid black;
+    align-self: center;
+    text-align: center;
+}
+
+label{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+input[type=password],
+input[type=text],
+input[type=email],
+input[type=number],
+input[type=date],
+input[type=time],
+select{
+    margin: 1rem 0.5rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+input[type=submit],button,input[type=reset]{
+    width: 50%;
+    padding: 0.7rem;
+   margin: 1rem 0.5rem;
+   align-self: center;
+   background-color: blue;
+   color: white;
+   font-size: 1rem;
+   font-weight: 700;
+}
+
+input[type=submit]:hover{
+    cursor: pointer;
+    color: red;
+    transition: all 300ms;
+}
+
+.formulario-login{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.buscador-actividades{
+    display: flex !important;
+    flex-direction: row;
+    background: none;
+    padding: 0;
+}
