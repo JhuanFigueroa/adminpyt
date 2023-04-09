@@ -19,7 +19,7 @@ class InicioView(TemplateView):
 class Prueba(TemplateView):
     template_name = "insertar.html"
 
-@csrf_protect
+
 class CrearActividad(CreateView):
     template_name = 'registrarActividad.html'
     model = Actividad
@@ -27,13 +27,13 @@ class CrearActividad(CreateView):
 
     success_url = reverse_lazy('actividades_app:add-actividad')
 
+    @csrf_protect
     def form_valid(self, form):
         actividad = form.save()
         actividad.save()
         return super(CrearActividad, self).form_valid(form)
     success_url = reverse_lazy('actividades_app:all-activities')
 
-@csrf_protect
 class ActividadListView(ListView):
     model = Actividad
     template_name = "actividades_list.html"
@@ -78,7 +78,7 @@ class ActividadDetailView(DetailView):
         context = super(ActividadDetailView, self).get_context_data(**kwargs)
         return context
 
-@csrf_protect
+
 class ActividadUpdateView(UpdateView):
     template_name = "update.html"
     model = Actividad
